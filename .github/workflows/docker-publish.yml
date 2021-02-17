@@ -6,7 +6,7 @@ on:
     tags:
       - v*
 env:
-  IMAGE_NAME: wpninfra/flake8
+  IMAGE_NAME: flake8
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build IMAGE_NAME
+      - name: Build $IMAGE_NAME
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Login to DockerHub
