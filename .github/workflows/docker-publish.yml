@@ -32,7 +32,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Login to DockerHub
-        run: echo "${{ secrets.DOCKER_PAT }}" | docker login docker.com -u ${{ secrets.DOCKER_ID }} --password-stdin
+        run: echo "${{ secrets.DOCKER_PAT }}" | docker login docker.io -u ${{ secrets.DOCKER_ID }} --password-stdin
 
       - name: Push image
         run: |
